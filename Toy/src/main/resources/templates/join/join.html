@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:include = "/layout/header :: headtitle ('join')">
+</head>
+<body>
+<!-- 
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+            <div class="sign_box">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href=""><img src="images/head_cart.png" alt="">장바구니</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+ -->
+ 	<!-- 
+ 		Thymeleaf 구문 -
+ 		th:include = 템플릿 파일 include 구문
+ 		속성값 : { 템플릿 파일 명 } :: { 템플릿 파일 내 fragment 명 }
+ 		템플릿 파일 명에서 확장자는 View Resolver를 통해 설정되어 생략이 가능하다.
+ 	 -->
+ 	<header th:include = "/layout/header::header"></header>
+    <h1>회원가입</h1>
+    <div class="join">
+		<h3>아이디</h3>
+		<input type="text" id="id" maxlength="12">
+		<p id="id_msg"></p>
+		<h3>비밀번호</h3>
+		<input type="password" id="pw1" maxlength="20">
+		<p id="pw1_msg"></p>
+		<h3>비밀번호 확인</h3>
+		<input type="password" id="pw2" maxlength="20">
+		<p id="pw2_msg"></p>
+		<h3>이름</h3>
+		<input type="text" id="name" maxlength="8">
+		<p id="name_msg"></p>
+		<h3>이메일</h3>
+		<input type="text" id="email" maxlength="30">
+		<p id="email_msg"></p>
+		<div class="btn_area">
+		    <button id="btn_join">가입</button>
+		</div>
+    </div>
+
+	<div th:include="/layout/footer :: footer ('join')">
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns = "http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:fragment="footer (template)">
+    <!-- 공통 js -->
+    <script th:if="${tempalte} != header" src="/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="/js/lib/common.js"></script>
+
+    <!-- main.html js -->
+    <script th:if="${template} == 'main' " src="/js/lib/main.js"></script>
+    
+    <!-- join.html js -->
+    <script th:if="${template} == 'join' " src="/js/lib/join.js"></script>
+    
+    <!-- login.html js -->
+    <script th:if="${template} == 'login' " src="/js/lib/login.js"></script>
+    
+    <!-- manager.html js -->
+    <script th:if="${template} == 'manager_login' " src="/js/lib/managerlogin.js"></script>
+    
+    <!-- header.html js -->
+    <script th:if="${template} == 'header' " src="/js/lib/header.js"></script>
+    
+    <!-- manager_mod.html js -->
+    <script th:if="${template} == 'manager_mod' " src="/js/lib/manager_mod.js"></script>
+    
+    <!-- manager_product.html js -->
+    <script th:if="${template} == 'manager_product' " src="/js/lib/manager_product.js"></script>
+
+	<!-- manager_sell.html js -->
+	<script th:if="${template} == 'manager_sell' " src="/js/lib/manager_sell.js"></script>    
+
+	<!-- cart.html js -->
+    <script th:if="${template} == 'cart' " src="/js/lib/bootstrap.min.js"></script>
+    <script th:if="${template} == 'cart' " th:inline="javascript" th:src="@{/js/lib/cart.js }"></script>
+</div>
+	
+</body>
+</html>
